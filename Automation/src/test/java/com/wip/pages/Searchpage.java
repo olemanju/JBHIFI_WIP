@@ -22,6 +22,7 @@ public class Searchpage extends BasePageObject
 	private final static Logger LOGGER = Logger.getLogger(Searchpage.class.getName());
 
 
+	//Boolean fields
 	boolean flag=false;
 	/* Web elements */
 	By txtbox_searchBox_xpath1= By.xpath("//input[@placeholder='Search products']");
