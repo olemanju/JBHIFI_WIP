@@ -54,7 +54,7 @@ public class BaseTestObject
 
 
 	public Properties ObjProperty=getPropertyContents();
-	public String browser = ObjProperty.getProperty("browser");
+	//public String browser = ObjProperty.getProperty("browser");
 	public String url = ObjProperty.getProperty("url");
 
 
@@ -113,20 +113,20 @@ public class BaseTestObject
 	{
 		report = new ExtentReports(System.getProperty("user.dir")+"\\ExtentReportResults.html");
 		extest = report.startTest("ExtentDemo");
-		if(browser.equalsIgnoreCase("FF"))
+		if(browserType.equalsIgnoreCase("FF"))
 		{
-			System.out.println(browser);
+			System.out.println(browserType);
 
 			System.setProperty("webdriver.gecko.driver",geckoDriverPath);
 			driver = new FirefoxDriver();
 		}
-		else if(browser.trim().equalsIgnoreCase(browserType.trim()))
+		else if(browserType.trim().equalsIgnoreCase("GC"))
 		{
 
 			System.setProperty("webdriver.chrome.driver",chromeDriverPath);
 			driver = new ChromeDriver();
 		}
-		else if(browser.equalsIgnoreCase("IE")){
+		else if(browserType.equalsIgnoreCase("IE")){
 			System.setProperty("webdriver.ie.driver",IEDriverPath);
 			driver = new InternetExplorerDriver();
 		}
